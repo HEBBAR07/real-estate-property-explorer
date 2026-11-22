@@ -1,0 +1,72 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Property</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>✏️ Edit Property</h1>
+
+        <form method="POST">
+
+            <label>Property Name</label>
+            <input type="text" name="title"
+                   value="{{ property.title }}" required>
+
+            <label>Location</label>
+            <input type="text" name="location"
+                   value="{{ property.location }}" required>
+
+            <label>Property Type</label>
+            <select name="property_type" required>
+                <option value="House"
+                    {% if property.property_type == "House" %}selected{% endif %}>
+                    House
+                </option>
+
+                <option value="Apartment"
+                    {% if property.property_type == "Apartment" %}selected{% endif %}>
+                    Apartment
+                </option>
+
+                <option value="Villa"
+                    {% if property.property_type == "Villa" %}selected{% endif %}>
+                    Villa
+                </option>
+
+                <option value="Plot"
+                    {% if property.property_type == "Plot" %}selected{% endif %}>
+                    Plot
+                </option>
+            </select>
+
+            <label>Price</label>
+            <input type="number" name="price"
+                   value="{{ property.price }}" required>
+
+            <label>Description</label>
+            <textarea name="description" rows="5">{{ property.description }}</textarea>
+
+            <label>Image URL</label>
+            <input type="text" name="image"
+                   value="{{ property.image }}">
+
+            <button type="submit">Update Property</button>
+
+            <a href="{{ url_for('home') }}">Cancel</a>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
+```

@@ -1,0 +1,142 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>{{ property.title }}</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <div class="logo">
+            🏠 Property Explorer
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/">
+                Properties
+            </a>
+
+            <a href="#">
+                Login
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Property Details -->
+
+    <section class="property-details">
+
+        <div class="property-details-image">
+            🏠
+        </div>
+
+
+        <div class="property-details-info">
+
+            <h1>
+                {{ property.title }}
+            </h1>
+
+            <p>
+                📍 {{ property.location }}
+            </p>
+
+            <h2>
+                💰 ₹{{ property.price }}
+            </h2>
+
+            <hr>
+
+
+            <h3>
+                Property Information
+            </h3>
+
+            <p>
+                🛏️ Bedrooms:
+                {{ property.bedrooms }}
+            </p>
+
+            <p>
+                🚿 Bathrooms:
+                {{ property.bathrooms }}
+            </p>
+
+            <p>
+                🏠 Property Type:
+                {{ property.type }}
+            </p>
+
+
+            <a href="/" class="back-button">
+                ← Back to Properties
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROPERTY LOCATION
+    ========================= -->
+
+    <section style="
+        width: 90%;
+        margin: 40px auto;
+    ">
+
+        <h2>📍 Property Location</h2>
+
+        <p>
+            Location: <strong>{{ property.location }}</strong>
+        </p>
+
+
+        <!-- Google Maps -->
+
+        <iframe
+            src="https://www.google.com/maps?q={{ property.location|urlencode }}&output=embed"
+            width="100%"
+            height="400"
+            style="
+                border: 0;
+                border-radius: 12px;
+            "
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+
+    </section>
+
+
+</body>
+
+</html>
+```

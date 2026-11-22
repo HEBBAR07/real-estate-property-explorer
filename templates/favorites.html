@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Favorites</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <div class="logo">
+            🏠 Property Explorer
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/favorites">
+                ❤️ Favorites
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Favorites -->
+
+    <section class="properties-section">
+
+        <h2>
+            ❤️ My Favorite Properties
+        </h2>
+
+
+        <div class="property-grid">
+
+            {% for property in properties %}
+
+            <div class="property-card">
+
+                <div class="property-image">
+                    🏠
+                </div>
+
+
+                <div class="property-info">
+
+                    <h3>
+                        {{ property.title }}
+                    </h3>
+
+                    <p class="location">
+                        📍 {{ property.location }}
+                    </p>
+
+                    <h4>
+                        ₹{{ property.price }}
+                    </h4>
+
+
+                    <div class="property-features">
+
+                        <span>
+                            🛏️ {{ property.bedrooms }} Beds
+                        </span>
+
+                        <span>
+                            🚿 {{ property.bathrooms }} Baths
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="/property/{{ property._id }}"
+                        class="details-button"
+                    >
+                        View Details
+                    </a>
+
+                </div>
+
+            </div>
+
+            {% else %}
+
+            <div class="no-properties">
+
+                <h3>
+                    No Favorite Properties
+                </h3>
+
+                <p>
+                    You haven't added any properties to your favorites yet.
+                </p>
+
+                <a href="/">
+                    Explore Properties
+                </a>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>

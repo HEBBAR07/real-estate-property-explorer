@@ -1,0 +1,421 @@
+from pymongo import MongoClient
+
+# Connect to MongoDB
+client = MongoClient("mongodb://localhost:27017/")
+
+# Database
+db = client["real_estate"]
+
+# Collection
+properties = db["properties"]
+
+# Property data
+property_data = [
+
+    # =========================
+    # MANGALORE
+    # =========================
+
+    {
+        "title": "3 BHK Independent House",
+        "location": "Kankanady, Mangalore",
+        "city": "Mangalore",
+        "type": "House",
+        "price": 8500000,
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "area": 1800,
+        "description": "Spacious 3 BHK independent house in a peaceful residential area.",
+        "image": "🏠"
+    },
+
+    {
+        "title": "2 BHK Modern Apartment",
+        "location": "Bejai, Mangalore",
+        "city": "Mangalore",
+        "type": "Apartment",
+        "price": 6200000,
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "area": 1200,
+        "description": "Modern 2 BHK apartment with excellent connectivity.",
+        "image": "🏢"
+    },
+
+    {
+        "title": "4 BHK Luxury Villa",
+        "location": "Kadri, Mangalore",
+        "city": "Mangalore",
+        "type": "House",
+        "price": 14500000,
+        "bedrooms": 4,
+        "bathrooms": 4,
+        "area": 2800,
+        "description": "Luxury villa with spacious rooms and premium interiors.",
+        "image": "🏡"
+    },
+
+    {
+        "title": "3 BHK Apartment",
+        "location": "Derebail, Mangalore",
+        "city": "Mangalore",
+        "type": "Apartment",
+        "price": 7200000,
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "area": 1500,
+        "description": "Comfortable 3 BHK apartment suitable for families.",
+        "image": "🏢"
+    },
+
+    {
+        "title": "2 BHK Family House",
+        "location": "Valencia, Mangalore",
+        "city": "Mangalore",
+        "type": "House",
+        "price": 6800000,
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "area": 1400,
+        "description": "Well-maintained family house in a convenient location.",
+        "image": "🏠"
+    },
+
+    {
+        "title": "3 BHK Premium Apartment",
+        "location": "Kottara, Mangalore",
+        "city": "Mangalore",
+        "type": "Apartment",
+        "price": 7800000,
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "area": 1650,
+        "description": "Premium apartment with modern amenities.",
+        "image": "🏢"
+    },
+
+    {
+        "title": "4 BHK Independent House",
+        "location": "Bendoor, Mangalore",
+        "city": "Mangalore",
+        "type": "House",
+        "price": 11000000,
+        "bedrooms": 4,
+        "bathrooms": 3,
+        "area": 2400,
+        "description": "Large independent house in a prime residential location.",
+        "image": "🏠"
+    },
+
+    {
+        "title": "2 BHK Apartment",
+        "location": "Hampankatta, Mangalore",
+        "city": "Mangalore",
+        "type": "Apartment",
+        "price": 5500000,
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "area": 1100,
+        "description": "Affordable apartment close to major city facilities.",
+        "image": "🏢"
+    },
+
+    {
+        "title": "3 BHK Sea View House",
+        "location": "Surathkal, Mangalore",
+        "city": "Mangalore",
+        "type": "House",
+        "price": 9200000,
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "area": 2000,
+        "description": "Beautiful house located close to the coast.",
+        "image": "🏡"
+    },
+
+    {
+        "title": "2 BHK Luxury Apartment",
+        "location": "Attavar, Mangalore",
+        "city": "Mangalore",
+        "type": "Apartment",
+        "price": 6500000,
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "area": 1250,
+        "description": "Stylish apartment with modern facilities.",
+        "image": "🏢"
+    },
+
+    {
+        "title": "3 BHK Duplex House",
+        "location": "Kavoor, Mangalore",
+        "city": "Mangalore",
+        "type": "House",
+        "price": 9800000,
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "area": 2100,
+        "description": "Spacious duplex house with parking facility.",
+        "image": "🏠"
+    },
+
+    {
+        "title": "2 BHK Ready Apartment",
+        "location": "Bondel, Mangalore",
+        "city": "Mangalore",
+        "type": "Apartment",
+        "price": 5900000,
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "area": 1150,
+        "description": "Ready-to-move apartment in a peaceful neighborhood.",
+        "image": "🏢"
+    },
+
+    {
+        "title": "5 BHK Luxury House",
+        "location": "Falnir, Mangalore",
+        "city": "Mangalore",
+        "type": "House",
+        "price": 18500000,
+        "bedrooms": 5,
+        "bathrooms": 5,
+        "area": 3500,
+        "description": "Large luxury home with premium facilities.",
+        "image": "🏡"
+    },
+
+    {
+        "title": "3 BHK City Apartment",
+        "location": "Kadri, Mangalore",
+        "city": "Mangalore",
+        "type": "Apartment",
+        "price": 7600000,
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "area": 1450,
+        "description": "Modern city apartment with excellent connectivity.",
+        "image": "🏢"
+    },
+
+    {
+        "title": "4 BHK Family Villa",
+        "location": "Bajpe, Mangalore",
+        "city": "Mangalore",
+        "type": "House",
+        "price": 12500000,
+        "bedrooms": 4,
+        "bathrooms": 4,
+        "area": 2600,
+        "description": "Spacious family villa with garden and parking.",
+        "image": "🏡"
+    },
+
+
+    # =========================
+    # MYSORE
+    # =========================
+
+    {
+        "title": "3 BHK Independent House",
+        "location": "Vijayanagar, Mysore",
+        "city": "Mysore",
+        "type": "House",
+        "price": 7800000,
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "area": 1800,
+        "description": "Beautiful independent house in Vijayanagar.",
+        "image": "🏠"
+    },
+
+    {
+        "title": "2 BHK Modern Apartment",
+        "location": "Kuvempunagar, Mysore",
+        "city": "Mysore",
+        "type": "Apartment",
+        "price": 5200000,
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "area": 1150,
+        "description": "Modern apartment located in a peaceful neighborhood.",
+        "image": "🏢"
+    },
+
+    {
+        "title": "4 BHK Luxury Villa",
+        "location": "Hebbal, Mysore",
+        "city": "Mysore",
+        "type": "House",
+        "price": 11500000,
+        "bedrooms": 4,
+        "bathrooms": 4,
+        "area": 2600,
+        "description": "Luxury villa with spacious interiors and parking.",
+        "image": "🏡"
+    },
+
+    {
+        "title": "3 BHK Premium Apartment",
+        "location": "JP Nagar, Mysore",
+        "city": "Mysore",
+        "type": "Apartment",
+        "price": 6500000,
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "area": 1500,
+        "description": "Premium apartment with modern amenities.",
+        "image": "🏢"
+    },
+
+    {
+        "title": "2 BHK Family House",
+        "location": "Saraswathipuram, Mysore",
+        "city": "Mysore",
+        "type": "House",
+        "price": 6200000,
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "area": 1350,
+        "description": "Comfortable house in a well-developed area.",
+        "image": "🏠"
+    },
+
+    {
+        "title": "3 BHK Apartment",
+        "location": "Dattagalli, Mysore",
+        "city": "Mysore",
+        "type": "Apartment",
+        "price": 6800000,
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "area": 1550,
+        "description": "Spacious apartment ideal for families.",
+        "image": "🏢"
+    },
+
+    {
+        "title": "4 BHK Independent House",
+        "location": "Lakshmipuram, Mysore",
+        "city": "Mysore",
+        "type": "House",
+        "price": 9800000,
+        "bedrooms": 4,
+        "bathrooms": 3,
+        "area": 2300,
+        "description": "Independent house in a prime Mysore location.",
+        "image": "🏠"
+    },
+
+    {
+        "title": "2 BHK Budget Apartment",
+        "location": "Bogadi, Mysore",
+        "city": "Mysore",
+        "type": "Apartment",
+        "price": 4800000,
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "area": 1050,
+        "description": "Affordable apartment with good connectivity.",
+        "image": "🏢"
+    },
+
+    {
+        "title": "3 BHK Garden House",
+        "location": "Hootagalli, Mysore",
+        "city": "Mysore",
+        "type": "House",
+        "price": 7200000,
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "area": 1900,
+        "description": "Beautiful house with garden space.",
+        "image": "🏡"
+    },
+
+    {
+        "title": "2 BHK Premium Apartment",
+        "location": "Nazarbad, Mysore",
+        "city": "Mysore",
+        "type": "Apartment",
+        "price": 5600000,
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "area": 1200,
+        "description": "Premium apartment near major city attractions.",
+        "image": "🏢"
+    },
+
+    {
+        "title": "3 BHK Duplex House",
+        "location": "Vijayanagar 2nd Stage, Mysore",
+        "city": "Mysore",
+        "type": "House",
+        "price": 8500000,
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "area": 2000,
+        "description": "Spacious duplex house with modern design.",
+        "image": "🏠"
+    },
+
+    {
+        "title": "2 BHK Ready Apartment",
+        "location": "Ramakrishnanagar, Mysore",
+        "city": "Mysore",
+        "type": "Apartment",
+        "price": 5100000,
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "area": 1100,
+        "description": "Ready-to-move apartment in a peaceful location.",
+        "image": "🏢"
+    },
+
+    {
+        "title": "5 BHK Luxury Villa",
+        "location": "Yadavgiri, Mysore",
+        "city": "Mysore",
+        "type": "House",
+        "price": 15000000,
+        "bedrooms": 5,
+        "bathrooms": 5,
+        "area": 3300,
+        "description": "Premium luxury villa with large living spaces.",
+        "image": "🏡"
+    },
+
+    {
+        "title": "3 BHK City Apartment",
+        "location": "Vontikoppal, Mysore",
+        "city": "Mysore",
+        "type": "Apartment",
+        "price": 6300000,
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "area": 1450,
+        "description": "Modern apartment close to schools and shopping areas.",
+        "image": "🏢"
+    },
+
+    {
+        "title": "4 BHK Family House",
+        "location": "Alanahalli, Mysore",
+        "city": "Mysore",
+        "type": "House",
+        "price": 10500000,
+        "bedrooms": 4,
+        "bathrooms": 4,
+        "area": 2500,
+        "description": "Large family house with parking and open space.",
+        "image": "🏡"
+    }
+]
+
+# Insert all properties
+result = properties.insert_many(property_data)
+
+print("===================================")
+print("Properties added successfully!")
+print("Total properties added:", len(result.inserted_ids))
+print("===================================")
